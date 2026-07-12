@@ -1,3 +1,7 @@
+output "notification_hub_authorization_rules_id" {
+  description = "Map of id values across all notification_hub_authorization_rules, keyed the same as var.notification_hub_authorization_rules"
+  value       = { for k, v in azurerm_notification_hub_authorization_rule.notification_hub_authorization_rules : k => v.id }
+}
 output "notification_hub_authorization_rules_listen" {
   description = "Map of listen values across all notification_hub_authorization_rules, keyed the same as var.notification_hub_authorization_rules"
   value       = { for k, v in azurerm_notification_hub_authorization_rule.notification_hub_authorization_rules : k => v.listen }
